@@ -176,10 +176,6 @@ class USBPrinterAdapter {
             Log.e(LOG_TAG, "USB Manager is not initialized")
             return false
         }
-        if (mUsbDeviceConnection[getUsbDeviceString(mUsbDevice!!)] != null) {
-            Log.i(LOG_TAG, "USB Connection already connected")
-            return true
-        }
         val usbInterface = mUsbDevice!!.getInterface(0)
         for (i in 0 until usbInterface.endpointCount) {
             val ep = usbInterface.getEndpoint(i)
